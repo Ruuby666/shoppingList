@@ -1,0 +1,12 @@
+Restaurante "Delicias Tardías"
+Fecha: 20/01/2025   Hora: 16:50
+---------------------------------
+Cant.   Descripción         Precio
+1x      Sándwich Mixto      $6.00
+1x      Café con Leche      $3.00
+1x      Churros con Chocolate $5.00
+---------------------------------
+Total:                     $14.00
+Pago: Tarjeta Débito
+---------------------------------
+¡Gracias por su visita

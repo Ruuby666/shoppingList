@@ -1,0 +1,12 @@
+Restaurante "Amor y Sabor"
+Fecha: 20/01/2025   Hora: 21:10
+---------------------------------
+Cant.   Descripción         Precio
+2x      Filete de Ternera   $40.00
+1x      Vino Tinto          $12.00
+1x      Tarta de Queso      $7.00
+---------------------------------
+Total:                     $59.00
+Pago: Tarjeta Mastercard
+---------------------------------
+¡Gracias por su visita!

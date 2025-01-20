@@ -1,0 +1,12 @@
+Restaurante "Work & Eat"
+Fecha: 20/01/2025   Hora: 12:00
+---------------------------------
+Cant.   Descripción         Precio
+1x      Paella de Mariscos  $18.00
+1x      Bocadillo de Jamón  $7.00
+2x      Cerveza             $5.00
+---------------------------------
+Total:                     $35.00
+Pago: Tarjeta VISA
+---------------------------------
+¡Gracias por su visita!

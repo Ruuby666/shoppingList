@@ -45,8 +45,9 @@ def generate_shopping_list():
                     shopping_list[ingrediente][0] += valor  # Sumar cantidad
                     shopping_list[ingrediente][1] = unidad  
 
-    return shopping_list
+    return shopping_list 
 
+# Shows the shopping list
 def show_shopping_list():
     shopping_list = generate_shopping_list()
     
