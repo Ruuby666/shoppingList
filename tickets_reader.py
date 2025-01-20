@@ -50,7 +50,7 @@ def show_shopping_list(ticket_files):
     shopping_list = generate_shopping_list(ticket_files)
 
     with open("lista_compras.txt", "w", encoding="utf-8") as file:
-        file.write("🛒 **Lista de Compras:**\n")
+        file.write("🛒 **Lista de la Compra :**\n")
         for ingrediente, (cantidad, unidad) in shopping_list.items():
             line = f"   - {cantidad} {unidad} de {ingrediente}\n"
             print(line.strip())
