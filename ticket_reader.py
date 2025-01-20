@@ -10,44 +10,49 @@ def load_products():
     
 # Read the ticket in ASCII format from ticket.txt
 def read_ticket():
-    productos_db = load_products()
-    productos_encontrados = defaultdict(int)
+    products_db = load_products()
+    products_find = defaultdict(int)
 
-    with open("ticket.txt", "r", encoding="ascii") as file:
+    with open("ticket.txt", "r", encoding="utf-8") as file:
         for linea in file:
             linea = linea.strip()
-            match = re.match(r"(\d+)x\s+(.*)", linea)  # Busca líneas con "2x Producto"
+            match = re.match(r"(\d+)\s*x\s+([^\d]+)\$", linea)  # Busca líneas con "2 x Producto" o "2x Producto"
             if match:
                 cantidad = int(match.group(1))
-                producto = match.group(2)
-                if producto in productos_db:
-                    productos_encontrados[producto] += cantidad
+                print(cantidad)
+                product = match.group(2).strip()
+                print(product)
+                if product in products_db:
+                    products_find[product] += cantidad
 
-    return productos_encontrados
+    return products_find
 
 # Generate the shopping list
 def generate_shopping_list():
-    productos = read_ticket()
-    productos_db = load_products()
-    lista_compras = defaultdict(lambda: [0, ""])  # {Ingrediente: [Cantidad, Unidad]}
+    products = read_ticket()
+    products_db = load_products()
+    shopping_list = defaultdict(lambda: [0, ""])  # {Ingrediente: [Cantidad, Unidad]}
 
-    for producto, cantidad_pedida in productos.items():
-        if "ingredientes" in productos_db[producto]:  
-            for i, ingrediente in enumerate(productos_db[producto]["ingredientes"]):
-                cantidad_original = productos_db[producto]["cantidad"][i]
+    for producto, cantidad_pedida in products.items():
+        if "ingredientes" in products_db[producto]:  
+            for i, ingrediente in enumerate(products_db[producto]["ingredientes"]):
+                cantidad_original = products_db[producto]["cantidad"][i]
                 match = re.match(r"([\d.]+)\s*(\w+)", cantidad_original)  # Extraer número y unidad
                 
                 if match:
                     valor = float(match.group(1)) * cantidad_pedida
                     unidad = match.group(2)
-                    lista_compras[ingrediente][0] += valor  # Sumar cantidad
-                    lista_compras[ingrediente][1] = unidad  
+                    shopping_list[ingrediente][0] += valor  # Sumar cantidad
+                    shopping_list[ingrediente][1] = unidad  
 
-    return lista_compras
+    return shopping_list
 
 def show_shopping_list():
-    lista_compras = generate_shopping_list()
+    shopping_list = generate_shopping_list()
     
     print("\n🛒 **Lista de Compras:**")
-    for ingrediente, (cantidad, unidad) in lista_compras.items():
+    for ingrediente, (cantidad, unidad) in shopping_list.items():
         print(f"   - {cantidad} {unidad} de {ingrediente}")
+
+if __name__ == "__main__":
+    show_shopping_list()
