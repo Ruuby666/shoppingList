@@ -1,0 +1,13 @@
+{
+    "Hamburguesa": {
+        "ingredientes": ["Pan", "Carne", "Queso Lonchas", "Lechuga", "Tomate"],
+        "cantidad": ["1 ud", "200gr", "2 ud", "50gr", "1/2 ud"]
+    },
+    "Cocacola": {
+        "cantidad": ["1 botella"]
+    },
+    "Postre Brownie": {
+        "ingredientes": ["Chocolate", "Harina", "Azúcar", "Mantequilla"],
+        "cantidad": ["200gr", "500gr", "300gr", "150gr"]
+    }
+}
