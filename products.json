@@ -9,5 +9,86 @@
     "Postre Brownie": {
         "ingredientes": ["Chocolate", "Harina", "Azúcar", "Mantequilla"],
         "cantidad": ["200gr", "500gr", "300gr", "150gr"]
+    },
+    "Pizza Margarita": {
+        "ingredientes": ["Masa de pizza", "Tomate frito", "Queso Mozzarella", "Albahaca"],
+        "cantidad": ["1 base", "100gr", "150gr", "10gr"]
+    },
+    "Ensalada César": {
+        "ingredientes": ["Lechuga", "Pollo", "Pan Tostado", "Queso Parmesano", "Salsa César"],
+        "cantidad": ["100gr", "150gr", "50gr", "30gr", "20ml"]
+    },
+    "Patatas Bravas": {
+        "ingredientes": ["Patatas", "Salsa Brava", "Mayonesa"],
+        "cantidad": ["250gr", "50ml", "20ml"]
+    },
+    "Tortilla Española": {
+        "ingredientes": ["Huevos", "Patatas", "Cebolla", "Aceite de Oliva"],
+        "cantidad": ["3 ud", "200gr", "50gr", "30ml"]
+    },
+    "Croquetas de Jamón": {
+        "ingredientes": ["Leche", "Harina", "Jamón", "Pan Rallado", "Huevo"],
+        "cantidad": ["500ml", "100gr", "150gr", "100gr", "1 ud"]
+    },
+    "Calamares a la Romana": {
+        "ingredientes": ["Calamares", "Harina", "Huevo", "Aceite de Oliva"],
+        "cantidad": ["200gr", "50gr", "1 ud", "50ml"]
+    },
+    "Paella de Mariscos": {
+        "ingredientes": ["Arroz", "Gambas", "Mejillones", "Caldo de pescado", "Pimiento", "Azafrán"],
+        "cantidad": ["200gr", "100gr", "100gr", "500ml", "50gr", "2gr"]
+    },
+    "Bocadillo de Jamón": {
+        "ingredientes": ["Pan", "Jamón Serrano", "Tomate", "Aceite de Oliva"],
+        "cantidad": ["1 ud", "100gr", "1/2 ud", "10ml"]
+    },
+    "Sándwich Mixto": {
+        "ingredientes": ["Pan de Molde", "Queso", "Jamón Cocido", "Mantequilla"],
+        "cantidad": ["2 rebanadas", "1 loncha", "1 loncha", "5gr"]
+    },
+    "Perrito Caliente": {
+        "ingredientes": ["Pan de perrito", "Salchicha", "Ketchup", "Mostaza"],
+        "cantidad": ["1 ud", "1 ud", "10ml", "10ml"]
+    },
+    "Tarta de Queso": {
+        "ingredientes": ["Queso Crema", "Azúcar", "Huevo", "Galleta", "Mantequilla"],
+        "cantidad": ["200gr", "100gr", "2 ud", "100gr", "50gr"]
+    },
+    "Helado de Vainilla": {
+        "ingredientes": ["Leche", "Azúcar", "Vainilla", "Nata"],
+        "cantidad": ["500ml", "100gr", "5ml", "200ml"]
+    },
+    "Café con Leche": {
+        "ingredientes": ["Café", "Leche"],
+        "cantidad": ["1 taza", "100ml"]
+    },
+    "Té con Limón": {
+        "ingredientes": ["Té", "Limón", "Azúcar"],
+        "cantidad": ["1 bolsa", "1 rodaja", "10gr"]
+    },
+    "Refresco de Naranja": {
+        "cantidad": ["1 lata"]
+    },
+    "Cerveza": {
+        "cantidad": ["1 botella"]
+    },
+    "Vino Tinto": {
+        "cantidad": ["1 copa"]
+    },
+    "Churros con Chocolate": {
+        "ingredientes": ["Harina", "Azúcar", "Aceite", "Chocolate"],
+        "cantidad": ["200gr", "50gr", "100ml", "150gr"]
+    },
+    "Gambas al Ajillo": {
+        "ingredientes": ["Gambas", "Ajo", "Aceite de Oliva", "Guindilla"],
+        "cantidad": ["200gr", "2 dientes", "50ml", "2gr"]
+    },
+    "Filete de Ternera": {
+        "ingredientes": ["Carne de Ternera", "Sal", "Pimienta", "Aceite de Oliva"],
+        "cantidad": ["250gr", "5gr", "2gr", "20ml"]
+    },
+    "Mojito": {
+        "ingredientes": ["Ron Blanco", "Hierbabuena", "Azúcar Moreno", "Limón", "Soda", "Hielo"],
+        "cantidad": ["50ml", "10 hojas", "20gr", "1/2 ud", "100ml", "4 cubos"]
     }
 }
