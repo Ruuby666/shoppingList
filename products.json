@@ -1,7 +1,7 @@
 {
     "Hamburguesa": {
-        "ingredientes": ["Pan", "Carne", "Queso Lonchas", "Lechuga", "Tomate"],
-        "cantidad": ["1 ud", "200gr", "2 ud", "50gr", "1/2 ud"]
+        "ingredientes": ["Pan de Hamburguesa", "Carne", "Queso Lonchas", "Lechuga", "Tomate"],
+        "cantidad": ["1 ud", "200gr", "2 ud", "50gr", "0.5 ud"]
     },
     "Cocacola": {
         "cantidad": ["1 botella"]
@@ -40,7 +40,7 @@
     },
     "Bocadillo de Jamón": {
         "ingredientes": ["Pan", "Jamón Serrano", "Tomate", "Aceite de Oliva"],
-        "cantidad": ["1 ud", "100gr", "1/2 ud", "10ml"]
+        "cantidad": ["1 ud", "100gr", "0.5 ud", "10ml"]
     },
     "Sándwich Mixto": {
         "ingredientes": ["Pan de Molde", "Queso", "Jamón Cocido", "Mantequilla"],
@@ -89,6 +89,6 @@
     },
     "Mojito": {
         "ingredientes": ["Ron Blanco", "Hierbabuena", "Azúcar Moreno", "Limón", "Soda", "Hielo"],
-        "cantidad": ["50ml", "10 hojas", "20gr", "1/2 ud", "100ml", "4 cubos"]
+        "cantidad": ["50ml", "10 hojas", "20gr", "0.5 ud", "100ml", "4 cubos"]
     }
 }

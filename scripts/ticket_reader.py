@@ -38,7 +38,9 @@ def read_tickets(ticket_files):
                     match = re.match(r"(\d+)\s*x\s+([^\d]+)\$", linea)
                     if match:
                         cantidad = int(match.group(1))
+                        print(cantidad)
                         product = match.group(2).strip()
+                        print(product)
                         if product in products_db:
                             products_find[product] += cantidad
                         else:
@@ -60,12 +62,14 @@ def generate_shopping_list(ticket_files):
             for i, ingrediente in enumerate(products_db[producto]["ingredientes"]):
                 cantidad_original = products_db[producto]["cantidad"][i]
                 match = re.match(r"([\d.]+)\s*(\w+)", cantidad_original)
-                
                 if match:
                     valor = float(match.group(1)) * cantidad_pedida
                     unidad = match.group(2)
                     shopping_list[ingrediente][0] += valor
                     shopping_list[ingrediente][1] = unidad
+                    print(valor)
+                    print(unidad)
+                    print(ingrediente)
 
     return shopping_list
 
