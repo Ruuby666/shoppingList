@@ -1,0 +1,12 @@
+Restaurante "La Buena Mesa"
+Fecha: 20/01/2025   Hora: 14:40
+---------------------------------
+Cant.   Descripción         Precio
+3x      Hamburguesa         $36.00
+1x      Patatas Bravas      $6.00
+1x      Mojito              $8.00
+---------------------------------
+Total:                     $50.00
+Pago: Tarjeta VISA
+---------------------------------
+¡Gracias por su visita!

@@ -1,0 +1,12 @@
+Restaurante "Buen Sabor"
+Fecha: 20/01/2025   Hora: 13:25
+---------------------------------
+Cant.   Descripción         Precio
+1x      Pizza Margarita     $15.00
+1x      Ensalada César      $10.00
+2x      Cerveza             $5.00
+---------------------------------
+Total:                     $35.00
+Pago: Efectivo
+---------------------------------
+¡Gracias por su visita!

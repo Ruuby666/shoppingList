@@ -1,0 +1,12 @@
+Restaurante "Buen Sabor"
+Fecha: 20/01/2025   Hora: 14:35
+---------------------------------
+Cant.   Descripción         Precio
+2x      Hamburguesa         $120.00
+1x      Cocacola            $45.00
+1x      Postre Brownie      $60.00
+---------------------------------
+Total:                     $285.00
+Pago: Tarjeta VISA
+---------------------------------
+¡Gracias por su visita!
