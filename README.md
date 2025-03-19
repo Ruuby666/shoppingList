@@ -1,24 +1,26 @@
 # Ticket Manager & Shopping List 🛒
 
-This project processes shopping tickets from a single file or a folder with multiple tickets and generates a shopping list based on the detected products. A graphical interface allows users to select files easily.
+This project processes shopping tickets from a single file or a folder containing multiple ticket files and generates a shopping list based on the detected products. A graphical user interface (GUI) allows users to easily select files or folders.
 
 ## 🚀 Installation & Usage
 
 ### 1️⃣ Requirements
 
-Ensure **Python 3.x** is installed.
+Ensure **Python 3.x** is installed on your system.
 
 ### 2️⃣ Clone the repository
 
+Clone the repository to your local machine:
+
 ```bash
-git clone https://github.com/your_username/ticket-manager.git
-cd ticket-manager
+git clone https://github.com/Ruuby666/compras.git
+cd compras
 ```
 
 ### 3️⃣ Run the GUI
 
 ```bash
-python ui.py
+python ./scripts/ui.py
 ```
 
 Options:
@@ -87,8 +89,8 @@ Este proyecto permite procesar tickets de compra desde un archivo o una carpeta 
 1️⃣ Clona el repositorio:
 
 ```bash
-git clone https://github.com/tu_usuario/gestor-tickets.git
-cd gestor-tickets
+git clone https://github.com/Ruuby666/compras.git
+cd compras
 ```
 
 2️⃣ Ejecuta la interfaz gráfica:
@@ -103,17 +105,7 @@ python ui.py
 python ticket_reader.py ticket1.txt ticket2.txt
 ```
 
-### 📜 Formato de Datos
-
-- `` define los productos y sus ingredientes.
-- **Tickets (**``**)** deben tener líneas como:
-
-```
-2 x Pizza$
-1 x Pan$
-```
-
-- **Salida (**``**)** genera la lista de compras:
+- **Salida:** genera la lista de compras (`shopping_list.txt`):
 
 ```
 🛒 Lista de Compras:
