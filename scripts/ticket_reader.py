@@ -5,7 +5,6 @@ import sys
 from collections import defaultdict
 
 # Function to find a file in the current folder and subfolders
-# Función para buscar un archivo en la carpeta actual y subcarpetas
 def find_file(filename):
     current_directory = os.getcwd()  # Get current directory
     for root, dirs, files in os.walk(current_directory):
@@ -14,7 +13,6 @@ def find_file(filename):
     return None
 
 # Load products from JSON file
-# Cargar productos desde un archivo JSON
 def load_products():
     products_file = find_file("products.json")
     if products_file:
@@ -28,7 +26,6 @@ def load_products():
     return {}
 
 # Read one or a directory of ticket files
-# Leer uno o varios archivos de tickets
 def read_tickets(ticket_files):
     products_db = load_products()
     products_find = defaultdict(int)
@@ -44,13 +41,15 @@ def read_tickets(ticket_files):
                         product = match.group(2).strip()
                         if product in products_db:
                             products_find[product] += cantidad
+                        else:
+                            print(f"⚠️ Warning: The product '{product}' in {ticket_file} is not defined in 'products.json'.")
+
         except FileNotFoundError:
             print(f"⚠️ Warning: File not found {ticket_file}")
 
     return products_find
 
 # Generates a shopping list based on the meals found in the tickets
-# Genera una lista de compras basada en los ingredientes de los productos encontrados en los tickets
 def generate_shopping_list(ticket_files):
     products = read_tickets(ticket_files)
     products_db = load_products()
@@ -71,7 +70,6 @@ def generate_shopping_list(ticket_files):
     return shopping_list
 
 # Show and save the shopping list
-# Mostrar y guardar la lista de compras
 def show_shopping_list(ticket_files):
     shopping_list = generate_shopping_list(ticket_files)
 
