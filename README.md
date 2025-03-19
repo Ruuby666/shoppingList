@@ -64,7 +64,7 @@ The generated shopping list:
 ```
 🛒 **Shopping List:**
    - 400g Flour
-   - 100ml Tomato
+   - 1.0ud Tomato
    - 300g Cheese
    - 10g Yeast
 ```
