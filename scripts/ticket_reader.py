@@ -4,16 +4,31 @@ import os
 import sys
 from collections import defaultdict
 
-# Cargar la base de datos de productos
-def load_products():
-    try:
-        with open("products.json", "r", encoding="utf-8") as file:
-            return json.load(file)
-    except FileNotFoundError:
-        print("❌ Error: El archivo 'products.json' no fue encontrado.")
-        return {}
+# Function to find a file in the current folder and subfolders
+# Función para buscar un archivo en la carpeta actual y subcarpetas
+def find_file(filename):
+    current_directory = os.getcwd()  # Get current directory
+    for root, dirs, files in os.walk(current_directory):
+        if filename in files:
+            return os.path.join(root, filename)
+    return None
 
-# Leer uno o varios tickets
+# Load products from JSON file
+# Cargar productos desde un archivo JSON
+def load_products():
+    products_file = find_file("products.json")
+    if products_file:
+        try:
+            with open(products_file, "r", encoding="utf-8") as file:
+                return json.load(file)
+        except Exception as e:
+            print(f"❌ Error loading 'products.json': {e}")
+    else:
+        print("❌ Error: The file 'products.json' not found in the current directory or subdirectories.")
+    return {}
+
+# Read one or a directory of ticket files
+# Leer uno o varios archivos de tickets
 def read_tickets(ticket_files):
     products_db = load_products()
     products_find = defaultdict(int)
@@ -30,11 +45,12 @@ def read_tickets(ticket_files):
                         if product in products_db:
                             products_find[product] += cantidad
         except FileNotFoundError:
-            print(f"⚠️ Advertencia: No se encontró el archivo {ticket_file}")
+            print(f"⚠️ Warning: File not found {ticket_file}")
 
     return products_find
 
-# Generar la lista de compras
+# Generates a shopping list based on the meals found in the tickets
+# Genera una lista de compras basada en los ingredientes de los productos encontrados en los tickets
 def generate_shopping_list(ticket_files):
     products = read_tickets(ticket_files)
     products_db = load_products()
@@ -54,26 +70,27 @@ def generate_shopping_list(ticket_files):
 
     return shopping_list
 
+# Show and save the shopping list
 # Mostrar y guardar la lista de compras
 def show_shopping_list(ticket_files):
     shopping_list = generate_shopping_list(ticket_files)
 
     if not shopping_list:
-        print("🛒 No hay productos en la lista de compras.")
+        print("🛒 There is no products in the shopping list.")
         return
 
-    with open("lista_compras.txt", "w", encoding="utf-8") as file:
-        file.write("🛒 **Lista de la Compra:**\n")
+    with open("shopping_list.txt", "w", encoding="utf-8") as file:
+        file.write("🛒 **Shopping list:**\n")
         for ingrediente, (cantidad, unidad) in shopping_list.items():
             line = f"   - {cantidad} {unidad} de {ingrediente}\n"
             print(line.strip())
             file.write(line)
 
-    print("\n✅ Lista de compras guardada en 'lista_compras.txt'.")
+    print("\n✅ Shopping list saved in 'shopping_list.txt'.")
 
 if __name__ == "__main__":
     ticket_files = sys.argv[1:]
     if ticket_files:
         show_shopping_list(ticket_files)
     else:
-        print("❌ No se proporcionaron archivos de tickets.")
+        print("❌ No ticket files provided.")

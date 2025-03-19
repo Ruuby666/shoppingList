@@ -3,11 +3,21 @@ from tkinter import filedialog, messagebox
 import subprocess
 import os
 
+# Function to find a file in the current folder and subfolders
+def find_file(filename):
+    current_directory = os.getcwd()  # Get the current directory
+    for root, dirs, files in os.walk(current_directory):
+        if filename in files:
+            return os.path.join(root, filename)
+    return None
+
+# Function to process a single file
 def process_file():
     file_path = filedialog.askopenfilename(filetypes=[("Text files", "*.txt")])
     if file_path:
         run_ticket_reader([file_path])
 
+# Function to process a folder
 def process_folder():
     folder_path = filedialog.askdirectory()
     if folder_path:
@@ -15,24 +25,30 @@ def process_folder():
         if ticket_files:
             run_ticket_reader(ticket_files)
         else:
-            messagebox.showwarning("Advertencia", "No se encontraron archivos de tickets en la carpeta seleccionada.")
+            messagebox.showwarning("Warning", "No ticket files were found in the selected folder.") 
 
+# It will search for ticket_reader.py in the current directory and subdirectories
 def run_ticket_reader(ticket_files):
-    try:
-        subprocess.run(["python", "ticket_reader.py", *ticket_files], check=True)
-    except subprocess.CalledProcessError:
-        messagebox.showerror("Error", "Ocurrió un error al ejecutar ticket_reader.py")
+    ticket_reader_file = find_file("ticket_reader.py")
+    if ticket_reader_file:
+        try:
+            subprocess.run(["python", ticket_reader_file, *ticket_files], check=True)
+        except subprocess.CalledProcessError:
+            messagebox.showerror("Error", "An error occurred while running ticket_reader.py")
+    else:
+        messagebox.showerror("Error", "ticket_reader.py file not found.")
 
-# Crear la interfaz
+# Create the Tkinter interface
 root = tk.Tk()
-root.title("Gestor de Tickets")
+root.title("Ticket Manager")
 root.geometry("400x200")
 
-tk.Label(root, text="Seleccione una opción:", font=("Arial", 12)).pack(pady=10)
+tk.Label(root, text="Select an option:", font=("Arial", 12)).pack(pady=10)
 
-tk.Button(root, text="📄 Cargar un archivo", command=process_file, width=30).pack(pady=5)
-tk.Button(root, text="📂 Cargar una carpeta", command=process_folder, width=30).pack(pady=5)
+tk.Button(root, text="📄 Load a file", command=process_file, width=30).pack(pady=5)
+tk.Button(root, text="📂 Load a folder", command=process_folder, width=30).pack(pady=5)
 
-tk.Button(root, text="Salir", command=root.quit, width=30).pack(pady=20)
+tk.Button(root, text="Exit", command=root.quit, width=30).pack(pady=20)
 
 root.mainloop()
+
