@@ -105,6 +105,21 @@ python ui.py
 python ticket_reader.py ticket1.txt ticket2.txt
 ```
 
+## 📜 `products.json` Formato
+
+```json
+{
+    "Pizza": {
+        "ingredients": ["Flour", "Tomato", "Cheese"],
+        "quantity": ["200g", "100ml", "150g"]
+    },
+    "Bread": {
+        "ingredients": ["Flour", "Yeast"],
+        "quantity": ["500g", "10g"]
+    }
+}
+```
+
 - **Salida:** genera la lista de compras (`shopping_list.txt`):
 
 ```
