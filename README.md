@@ -13,8 +13,8 @@ Ensure **Python 3.x** is installed on your system.
 Clone the repository to your local machine:
 
 ```bash
-git clone https://github.com/Ruuby666/compras.git
-cd compras
+git clone https://github.com/Ruuby666/shoppingList.git
+cd shoppingList
 ```
 
 ### 3️⃣ Run the GUI
@@ -89,8 +89,8 @@ Este proyecto permite procesar tickets de compra desde un archivo o una carpeta 
 1️⃣ Clona el repositorio:
 
 ```bash
-git clone https://github.com/Ruuby666/compras.git
-cd compras
+git clone https://github.com/Ruuby666/shoppingList.git
+cd shoppingList
 ```
 
 2️⃣ Ejecuta la interfaz gráfica:
