@@ -14,13 +14,15 @@ def find_file(filename):
 
 # Function to process a single file
 def process_file():
-    file_path = filedialog.askopenfilename(filetypes=[("Text files", "*.txt")])
+    initial_dir = os.path.join(os.getcwd(), "data") 
+    file_path = filedialog.askopenfilename(initialdir=initial_dir, filetypes=[("Text files", "*.txt")])
     if file_path:
         run_ticket_reader([file_path])
 
 # Function to process a folder
 def process_folder():
-    folder_path = filedialog.askdirectory()
+    initial_dir = os.path.join(os.getcwd(), "data")
+    folder_path = filedialog.askdirectory(initialdir=initial_dir)
     if folder_path:
         ticket_files = [os.path.join(folder_path, f) for f in os.listdir(folder_path) if f.startswith("ticket") and f.endswith(".txt")]
         if ticket_files:
@@ -34,10 +36,14 @@ def run_ticket_reader(ticket_files):
     if ticket_reader_file:
         try:
             subprocess.run(["python", ticket_reader_file, *ticket_files], check=True)
+            confirmation()
         except subprocess.CalledProcessError:
             messagebox.showerror("Error", "An error occurred while running ticket_reader.py")
     else:
         messagebox.showerror("Error", "ticket_reader.py file not found.")
+
+def confirmation():
+    return messagebox.showinfo("Success", "Ticket files processed successfully!")
 
 # Create the Tkinter interface
 root = tk.Tk()
